@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>COVID-19</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+<body>
+	
+
+	
+	<div id = 'header'>
+		<h1 id = 'heading'>COVID-19</h1>
+	</div>
+
+	<div id = 'stats'>
+		<div id="stats-main">
+			<div id = 'totalCases'>
+				<p class = 'countHead'>Total Cases: </p>
+				<p id = 'h1TotalCases' class = 'count'></p>
+			</div>
+	
+			
+			<div id = 'totalDeaths'>
+				<p class = 'countHead'>Deaths: </p>
+				<p id = 'h1TotalDeaths' class = 'count'></p>
+			</div>
+		
+				
+			<div id = 'totalCases' >
+				<p class = 'countHead'>Recovered: </p>
+				<p id = 'h1TotalRecovered' class = 'count'></p>
+			</div>
+		</div>
+	
+	</div>
+
+	<br><br>
+	<br><br>
+	<div class = 'statsByCountry'>
+		<div id = 'statsHeading' class = 'statsClass'>
+			<h3>Stats By Country</h3>
+		</div>
+		<div id = 'searchDiv' class = 'statsClass'>
+			
+			<input type = "text"  id = 'myInput' class = "searchInp"  placeholder="Search Country"  />
+			<button onclick = "search()" id= 'searchSub'>Submit</button>
+			</div>
+
+	</div>	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+								
+				<div class="table100 ver2 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Country</th>
+									<th class="cell100 column2">New Cases</th>
+									<th class="cell100 column3">Total Cases</th>
+									<th class="cell100 column4">New Deaths</th>
+									<th class="cell100 column5">Total Deaths</th>
+									<th class="cell100 column6">Recovered</th>
+						
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table id = 'data'> 
+					</table>
+					</div>
+				</div>
+
+			
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<h5 style = "padding:12px;">©Wahaj Choudhry</h5>
+	</footer>
+
+<!--==============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+	
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
